@@ -15,14 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/logout', function () {  
-    Auth::logout(); 
+Route::get('/logout', function () {
+    Auth::logout();
 
-    return redirect('/login'); 
+    return redirect('/login');
 });
+
+Route::get('/perpustakaan', function () {
+    return view('perpustakaan');
+});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/about', 'HomeController@about');
 
+Route::resource('anggota', 'AnggotaController');
+Route::resource('kategori', 'KategoriController');
+Route::resource('buku', 'BukuController');
+Route::resource('transaksi', 'TransaksiController');
+Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
+Route::get('transaksi/showBuku/{id}', 'TransaksiController@showBuku');
+Route::get('transaksi/getAnggota/{id}', 'TransaksiController@getAnggota');
+Route::post('/transaksi/update/{id}', 'TransaksiController@update');
