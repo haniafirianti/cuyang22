@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Bootstrap Example</title>
+<head>  
+  <title>Cuyang - About</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,17 +10,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 
 </head>
 
 <body>
 
   <div class="container">
-    <div class="alert alert-success">
-      <strong>Success!</strong> Anda Berhasil Login
-    </div>
-
-
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link active" href="/home">Home</a>
@@ -56,7 +56,7 @@
     <p></p>
 
     <h2><b>Our Bio</b></h2>
-    <table class="table table-hover">
+    <table id="dataTables" class="table table-striped table-bordered" style="width:100%">
       <thead>
         <tr>
           <th>NO</th>
@@ -133,6 +133,12 @@
       </tbody>
     </table>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#dataTables').DataTable();
+  } );
+
+</script>
 
 </body>
 
