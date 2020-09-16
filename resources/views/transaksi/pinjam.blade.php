@@ -1,8 +1,23 @@
-@extends('layouts.main')
-@section('title', 'Laravel - SI Perpustakaan')
+@extends('layouts.master')
+
 @section('content')
-<div class="container">
-    <div class="jumbotron">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ url('perpustakaan')}}">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+
+                    <a class="nav-item nav-link" href="{{ url('anggota')}}">Anggota</a>
+                    <a class="nav-item nav-link" href="{{ url('kategori')}}">Kategori Buku</a>
+                    <a class="nav-item nav-link" href="{{ url('buku')}}">Daftar Buku</a>
+                    <a class="nav-item nav-link" href="{{ url('transaksi')}}">Transaksi</a>
+
+
+                </div>
+            </div>
+        </nav>
         @if(session('msg'))
         <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
             {{session('msg')}}
@@ -70,8 +85,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
-    </div>
-</div>
+
 <script>
     $(function() {
         $('#id_buku').on('change', function(e) {
