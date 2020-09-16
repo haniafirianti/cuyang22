@@ -18,8 +18,6 @@ class AnggotaController extends Controller
     public function index()
     {
         $anggota = Anggota::all();
-
-
         return view('anggota.index', compact('anggota'));
     }
 
@@ -50,6 +48,8 @@ class AnggotaController extends Controller
         ]);
 
         Anggota::create($request->all());
+
+        \Session::flash('sukses','Anggota Berhasil di Tambahkan');
         return redirect('anggota')->with('msg', 'Data Berhasil di Simpan');
     }
 

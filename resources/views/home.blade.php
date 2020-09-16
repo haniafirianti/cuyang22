@@ -63,25 +63,18 @@
           <td>Islam</td>
           <td>ig: santisintia01</td>
         </tr>
-        </tbody>
-        </table>
-
-        <p><h2><b>Contact Us</b></h2></p>
-           <h6><b>Whatsapp No : </b>089876543210</h6>
-           <h6><b>E-mail      : </b>cuyang@gmail.com</h6>
-           <h6><b>Instagram   : </b>cuyangetim12345</h6>
-           <h6><b>Facebook    : </b>CuyangTeam</h6>
-
-        <p><h2><b>Purpose This Project</b></h2></p>
-            <h6>Project ini dibuat untuk kami belajar dan menjadi history kami</h6>
-
-
-
-
       </tbody>
     </table>
-
-</div>
-
+                      <div class="col-md-6 col-xl-4">
+                            <!-- Card -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="py-4">
+                                        <h6 class="mb-20">A success message!</h6>
+                                        <button type="button" class="btn btn-info btn-xs" id="sa-success">Click me</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
     
 @endsection

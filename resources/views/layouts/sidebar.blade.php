@@ -1,3 +1,7 @@
+<?php
+$users = \App\User::where('id', \Auth::user()->id)->first();
+?>
+
     <div class="choose-layout-area">
         <div class="setting-trigger-icon" id="settingTrigger">
             <i class="ti-settings"></i>
@@ -44,8 +48,8 @@
                                     <img src="{{ url('/img/member-img/1.png')}}" alt="">
                                 </div>
                                 <div class="user-content">
-                                    <h6>Ajoy Das</h6>
-                                    <span>Pro User</span>
+                                    <h6>{{ \Auth::user()->name }}</h6>
+                                    <span>{{ \Auth::user()->email }}</span>
                                 </div>
                             </li>
                             <li><a href="{{ url('home')}}"><i class="icon_lifesaver"></i> <span>Dashboard</span></a></li>

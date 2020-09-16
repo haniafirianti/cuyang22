@@ -16,10 +16,29 @@
 <script src="{{ asset('js/default-assets/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('js/default-assets/datatable-button.min.js') }}"></script>
 
+<script src="{{ asset('js/default-assets/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('js/default-assets/sweetalert-init.js') }}"></script>
+<script src="{{ asset('js/default-assets/dashboard-chat.js') }}"></script>
+
+
 <script type="text/javascript">
     $(document).ready(function() {
       $('#dataTables').DataTable();
   } );
+
+    $(document).ready(function(){
+    	 var flash = "{{ Session::has('sukses') }}";
+        if(flash){
+            var pesan = "{{ Session::get('sukses') }}"
+            swal("Sukses", pesan, "success");
+        }
+ 
+        var gagal = "{{ Session::has('gagal') }}";
+        if(gagal){
+            var pesan = "{{ Session::get('gagal') }}"
+            swal("Error", pesan, "error");
+        }
+    });
 </script>
 
 
