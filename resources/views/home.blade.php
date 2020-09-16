@@ -65,8 +65,8 @@
         </tr>
       </tbody>
     </table>
-                      <div class="col-md-6 col-xl-4">
-                            <!-- Card -->
+                    <!--   <div class="col-md-6 col-xl-4">
+
                             <div class="card">
                                 <div class="card-body">
                                     <div class="py-4">
@@ -75,6 +75,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
     
 @endsection
