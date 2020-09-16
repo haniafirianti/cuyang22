@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/logout', function () {
@@ -25,11 +25,13 @@ Route::get('/perpustakaan', function () {
     return view('perpustakaan');
 });
 
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/about', 'HomeController@about');
+
+Route::group(['middleware' => ['DisablePreventBack', 'auth'] ], function () {
+	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/home/about', 'HomeController@about');
+});
 
 Route::resource('anggota', 'AnggotaController');
 Route::resource('kategori', 'KategoriController');
@@ -39,3 +41,6 @@ Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
 Route::get('transaksi/showBuku/{id}', 'TransaksiController@showBuku');
 Route::get('transaksi/getAnggota/{id}', 'TransaksiController@getAnggota');
 Route::post('/transaksi/update/{id}', 'TransaksiController@update');
+
+
+Route::get('users','UserController@create');

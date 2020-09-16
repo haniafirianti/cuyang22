@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use App\Buku;
-use App\Kategori;
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+class UserController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -17,17 +13,7 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $buku = Buku::join('table_kategori', 'table_buku.kategori', '=', 'table_kategori.kategori')
-            ->select(
-                'table_buku.id_buku',
-                'table_buku.judul_buku',
-                'table_buku.deskripsi',
-                'table_kategori.deskripsi as kategori',
-                'table_buku.cover_img'
-            )
-            ->get();
-        // return $buku;
-        return view('buku.index', compact('buku'));
+        //
     }
 
     /**
@@ -37,9 +23,9 @@ class BukuController extends Controller
      */
     public function create()
     {
-        $kategori = Kategori::all();
-        return view('buku.create', compact('kategori'));
+        return view('users.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -48,24 +34,7 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'judul_buku' => 'required',
-            'deskripsi'  => 'required',
-            'kategori'  => 'required',
-            'cover_img'  => 'required',
-
-
-        ]);
-        $file = $request->file('cover_img');
-        $buku = new Buku;
-        $buku->judul_buku = $request->judul_buku;
-        $buku->deskripsi  = $request->deskripsi;
-        $buku->kategori   = $request->kategori;
-        $buku->cover_img  = $file->getClientOriginalName();
-        $tujuan_upload = 'image';
-        $file->move($tujuan_upload, $file->getClientOriginalName());
-        $buku->save();
-        return redirect('buku')->with('msg', 'Data Berhasil di Simpan');
+        //
     }
 
     /**
@@ -76,8 +45,7 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        $buku = Buku::where('id_buku', $id)->first();
-        return $buku;
+        //
     }
 
     /**

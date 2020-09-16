@@ -23,12 +23,12 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="/home">Home</a>
+        <a class="nav-link active" href="{{ url('home') }}">Home</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Progres</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Progres 1</a>
+          <a class="dropdown-item" href="{{ url('perpustakaan') }}">Progres 1</a>
           <a class="dropdown-item" href="#">Progres 2</a>
           <a class="dropdown-item" href="#">Progres 3</a>
         </div>

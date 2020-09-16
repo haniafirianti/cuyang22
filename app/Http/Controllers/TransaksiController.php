@@ -12,6 +12,7 @@ use phpDocumentor\Reflection\Types\Null_;
 
 class TransaksiController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

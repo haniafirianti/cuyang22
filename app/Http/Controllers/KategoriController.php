@@ -7,6 +7,7 @@ use App\Kategori;
 
 class KategoriController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
