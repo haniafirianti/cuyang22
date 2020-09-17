@@ -1,82 +1,97 @@
 @extends('layouts.master')
 
 @section('content')
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{{ url('perpustakaan')}}">Dashboard</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
 
-                    <a class="nav-item nav-link" href="{{ url('anggota')}}">Anggota</a>
-                    <a class="nav-item nav-link" href="{{ url('kategori')}}">Kategori Buku</a>
-                    <a class="nav-item nav-link" href="{{ url('buku')}}">Daftar Buku</a>
-                    <a class="nav-item nav-link" href="{{ url('transaksi')}}">Transaksi</a>
+<div class="main-content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <a class="navbar-brand" href="{{ url('perpustakaan')}}">Dashboard</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+
+                                <a class="nav-item nav-link" href="{{ url('anggota')}}">Anggota</a>
+                                <a class="nav-item nav-link" href="{{ url('kategori')}}">Kategori Buku</a>
+                                <a class="nav-item nav-link" href="{{ url('buku')}}">Daftar Buku</a>
+                                <a class="nav-item nav-link" href="{{ url('transaksi')}}">Transaksi</a>
 
 
+                            </div>
+                        </div>
+                    </nav>
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                    <center>
+                        <h1 class="display-6">Pinjam Buku</h1>
+                    </center>
+                    <hr class="my-4">
+                    <form action="{{ url('transaksi')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="type_transaksi">Type Transaksi</label>
+                            <select class="form-control" id="type_transaksi" name="type_transaksi">
+                                <option value="pinjam">Pinjam</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_buku">Kode Buku</label>
+                            <input type="text" class="form-control" id="id_buku" name="id_buku" placeholder="ID Buku" data-url="{{ url('/') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="judul_buku">Judul Buku</label>
+                            <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Judul Buku" readonly="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi Buku</label>
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi Buku" readonly="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="kategori">Kategori Buku</label>
+                            <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Kategori Buku" readonly="true">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="kategori">Tanggal Pinjam</label>
+                                    <input type="date" class="form-control" name="tgl_pinjam">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="kategori">Tanggal Kembali</label>
+                                    <input type="date" class="form-control" name="tgl_kembali" readonly="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_anggota">ID Anggota Peminjam</label>
+                            <input type="text" class="form-control" id="id_anggota" name="id_anggota" placeholder="ID Anggota" data-url="{{ url('/') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_anggota">Nama Peminjam</label>
+                            <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" readonly="true">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
                 </div>
             </div>
-        </nav>
-
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
         </div>
-        @endif
+    </div>
+</div>
 
-        <center><h1 class="display-6">Pinjam Buku</h1></center>
-        <hr class="my-4">
-        <form action="{{ url('transaksi')}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-                <label for="type_transaksi">Type Transaksi</label>
-                <select class="form-control" id="type_transaksi" name="type_transaksi">
-                    <option value="pinjam">Pinjam</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="id_buku">Kode Buku</label>
-                <input type="text" class="form-control" id="id_buku" name="id_buku" placeholder="ID Buku" data-url="{{ url('/') }}">
-            </div>
-            <div class="form-group">
-                <label for="judul_buku">Judul Buku</label>
-                <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Judul Buku" readonly="true">
-            </div>
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi Buku</label>
-                <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi Buku" readonly="true">
-            </div>
-            <div class="form-group">
-                <label for="kategori">Kategori Buku</label>
-                <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Kategori Buku" readonly="true">
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="kategori">Tanggal Pinjam</label>
-                        <input type="date" class="form-control" name="tgl_pinjam">
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="kategori">Tanggal Kembali</label>
-                        <input type="date" class="form-control" name="tgl_kembali" readonly="true">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="id_anggota">ID Anggota Peminjam</label>
-                <input type="text" class="form-control" id="id_anggota" name="id_anggota" placeholder="ID Anggota" data-url="{{ url('/') }}">
-            </div>
-            <div class="form-group">
-                <label for="nama_anggota">Nama Peminjam</label>
-                <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" readonly="true">
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-        </form>
+
 
 <script>
     $(function() {
