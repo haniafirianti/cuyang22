@@ -6,6 +6,7 @@ use DB;
 use App\Buku;
 use App\Kategori;
 use Illuminate\Http\Request;
+use Alert;
 
 class BukuController extends Controller
 {
@@ -65,7 +66,8 @@ class BukuController extends Controller
         $tujuan_upload = 'image';
         $file->move($tujuan_upload, $file->getClientOriginalName());
         $buku->save();
-        return redirect('buku')->with('msg', 'Data Berhasil di Simpan');
+        Alert::success('Buku','Berhasil Di Tambahkan');
+        return redirect('buku');
     }
 
     /**

@@ -18,14 +18,6 @@
             </div>
         </nav>
 
-        @if(session('msg'))
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-            {{session('msg')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
         <center><h1 class="display-6">Data Buku</h1></center>
         <hr class="my-2">
         <a href="{{ url('buku/create')}}" class="btn btn-primary mb-1">Tambah Buku</a>

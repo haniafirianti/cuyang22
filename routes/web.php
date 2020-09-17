@@ -12,12 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+	// broadcast(new WebsocketEvent('some data'));
+
+    return view('welcome');
 });
+
 
 Route::get('/logout', function () {
     Auth::logout();
-
     return redirect('/login');
 });
 

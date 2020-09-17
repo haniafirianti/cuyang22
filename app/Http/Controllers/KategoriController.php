@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kategori;
+use Alert;
 
 class KategoriController extends Controller
 {
@@ -44,7 +45,8 @@ class KategoriController extends Controller
         ]);
 
         Kategori::create($request->all());
-        return redirect('kategori')->with('msg', 'Data Berhasil di Simpan');
+        Alert::success('Kategori','Berhasil Di Tambahkan');
+        return redirect('kategori');
     }
 
     /**

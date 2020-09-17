@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Laravel - SI Perpustakaan')
+
 @section('content')
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="{{ url('perpustakaan')}}">Dashboard</a>
@@ -19,15 +19,6 @@
             </div>
         </nav>
 
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         <h1 class="display-6">Pinjam Buku</h1>
         <hr class="my-4">
         <form action="{{ action('TransaksiController@update', $pinjaman->id) }}" method="POST">

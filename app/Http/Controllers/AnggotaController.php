@@ -6,6 +6,7 @@ use DB;
 use App\Anggota;
 use App\Buku;
 use Illuminate\Http\Request;
+use Alert;
 
 class AnggotaController extends Controller
 {
@@ -48,9 +49,8 @@ class AnggotaController extends Controller
         ]);
 
         Anggota::create($request->all());
-
-        \Session::flash('sukses','Anggota Berhasil di Tambahkan');
-        return redirect('anggota')->with('msg', 'Data Berhasil di Simpan');
+        Alert::success('Anggota','Berhasil Di Tambahkan');
+        return redirect('anggota');
     }
 
     /**

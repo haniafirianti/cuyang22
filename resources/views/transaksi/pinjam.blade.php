@@ -18,14 +18,6 @@
                 </div>
             </div>
         </nav>
-        @if(session('msg'))
-        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-            {{session('msg')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -37,7 +29,7 @@
         </div>
         @endif
 
-        <h1 class="display-6">Pinjam Buku</h1>
+        <center><h1 class="display-6">Pinjam Buku</h1></center>
         <hr class="my-4">
         <form action="{{ url('transaksi')}}" method="POST" enctype="multipart/form-data">
             @csrf

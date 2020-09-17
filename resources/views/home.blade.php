@@ -2,6 +2,8 @@
 
 @section('content')
 
+npm run watch
+
     <center><h2>CUYANGE TEAM</h2></center>
     <!-- <a class="btn btn-success btn-sm" href="{{ url('users') }}">Tambah Member</a> -->
      <table id="dataTables" class="table table-striped" style="width:100%">
@@ -65,6 +67,20 @@
         </tr>
       </tbody>
     </table>
+
+    <video width="300" height="300">
+      <source src="{{ url('media/test.mp4')}}" type="video/mp4">
+         <source src="video/test.ogg" type="video/ogg">
+        Tidak mendukung
+    </video>
+
+    <audio>
+      <source src="{{ url('media/1.wav') }}" type="audio/wav">
+        TAK MENDUKUNG
+    </audio>
+
+    <h1>ANJING</h1>
+
                     <!--   <div class="col-md-6 col-xl-4">
 
                             <div class="card">
