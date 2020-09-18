@@ -10,11 +10,15 @@
 
 ## Cara Install
 
--   git clone https://github.com/haniafirianti/cuyang22.git
+```bash
+$ git clone https://github.com/haniafirianti/cuyang22.git
+```
+
 -   Edit copy .env.example to .env dan setting database name sesuai yang kamu punya
 -   Run :
 
 ```bash
+$ composer install
 $ composer update
 $ php artisan migrate
 $ php artisan serve
