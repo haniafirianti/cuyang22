@@ -1,6 +1,6 @@
 <h1 align="center">Cuyang Squad</h1>
 
-![Ouroom](https://github.com/kurnyaannn/ouroom-project/blob/master/public/asset/auth.jpg)
+![Ouroom](https://github.com/haniafirianti/cuyang22/blob/ee1e4f4a231a8ee72029b5407951a29875b948db/public/asset/auth.PNG)
 
 ## Membutuhkan
 
