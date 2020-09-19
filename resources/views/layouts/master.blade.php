@@ -8,9 +8,16 @@
 
   @include('layouts.sidebar')
 
+<div class="preloader">
+      <div class="loading">
+        <img src="{{ asset('image/love.gif')}}" width="200">
+        <p>Harap Tunggu</p>
+      </div>
+    </div>
 
 <div class="ecaps-page-content">
     <div class="container-fluid">
+
         @yield('content')
        @include('layouts.header')
 

