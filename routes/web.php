@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+	return view('auth.login');
 });
 
 
 Route::get('/logout', function () {
-    Auth::logout();
-    return redirect('/login');
+	Auth::logout();
+	return redirect('/login');
 });
 
 Auth::routes();
@@ -26,19 +26,18 @@ Auth::routes();
 Route::group(['middleware' => 'DisablePreventBack'], function () {
 
 	Route::get('/dashboard', function () {
-	    return view('users.dashboard');
+		return view('users.dashboard');
 	})->name('dashboard');
-
 });
 
 
-Route::group(['middleware' => ['role:admin','DisablePreventBack']], function () {
+Route::group(['middleware' => ['role:admin', 'DisablePreventBack']], function () {
 
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/home/about', 'HomeController@about');
 
 	Route::get('/perpustakaan', function () {
-    	return view('perpustakaan');
+		return view('perpustakaan');
 	});
 
 	Route::resource('anggota', 'AnggotaController');
@@ -49,8 +48,12 @@ Route::group(['middleware' => ['role:admin','DisablePreventBack']], function () 
 	Route::get('transaksi/showBuku/{id}', 'TransaksiController@showBuku');
 	Route::get('transaksi/getAnggota/{id}', 'TransaksiController@getAnggota');
 	Route::post('/transaksi/update/{id}', 'TransaksiController@update');
-
-    
 });
 
 // Route::get('users', 'UserController@create');
+
+
+Route::get('/change-password', 'UserController@createChangePassword');
+Route::post('/change-password', 'UserController@StoreChangePassword');
+
+Route::post('/profile', 'UserController@update_avatar');

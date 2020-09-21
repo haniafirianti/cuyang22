@@ -21,6 +21,25 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+    <ul class="dropdown-menu" role="menu">
+<li>
+<a href="{{ route('logout') }}"
+onclick="event.preventDefault();
+document.getElementById('logout-form').submit();">
+Logout
+</a>
+ 
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+</li>
+<li>
+<a href="{{route('changePassword')}}">
+Change Password
+</a>
+</li>
+</ul>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

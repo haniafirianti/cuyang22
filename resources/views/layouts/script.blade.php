@@ -8,6 +8,8 @@
 <script src="{{ asset('js/default-assets/active.js') }}"></script>
 
 <!-- These plugins only need for the run this page -->
+
+
 <script src="{{ asset('js/default-assets/dashboard-chat.js') }}"></script>
 
 <script src="{{ asset('js/default-assets/jquery.datatables.min.js') }}"></script>
@@ -16,7 +18,7 @@
 <script src="{{ asset('js/default-assets/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('js/default-assets/datatable-button.min.js') }}"></script>
 
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
 
 <script>
     $(document).ready(function(){

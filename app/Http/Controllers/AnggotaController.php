@@ -6,7 +6,7 @@ use DB;
 use App\Anggota;
 use App\Buku;
 use Illuminate\Http\Request;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AnggotaController extends Controller
 {
@@ -49,7 +49,7 @@ class AnggotaController extends Controller
         ]);
 
         Anggota::create($request->all());
-        Alert::success('Anggota','Berhasil Di Tambahkan');
+        Alert::success('Anggota', 'Berhasil Di Tambahkan');
         return redirect('anggota');
     }
 

@@ -9,7 +9,7 @@ use App\Kategori;
 use App\Anggota;
 use App\Transaksi;
 use phpDocumentor\Reflection\Types\Null_;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TransaksiController extends Controller
 {
@@ -73,18 +73,18 @@ class TransaksiController extends Controller
                     $transaksi->tgl_pinjam = $request->tgl_pinjam;
                     $transaksi->tgl_kembali = NULL;
                     $transaksi->save();
-                    Alert::success('Peminjaman','Data Berhasil Di Tambahkan');
+                    Alert::success('Peminjaman', 'Data Berhasil Di Tambahkan');
                     return redirect('transaksi');
                 } else {
                     $transaksi->tgl_kembali = $request->tgl_kembali;
                 }
                 // return $transaksi;
             } else {
-                Alert::error('Pemijaman','Buku Tidak Di Temukan');
+                Alert::error('Pemijaman', 'Buku Tidak Di Temukan');
                 return redirect()->back();
             }
         } else {
-            Alert::error('Peminjaman','Anggota tidak di temukan');
+            Alert::error('Peminjaman', 'Anggota tidak di temukan');
             return redirect()->back();
         }
     }

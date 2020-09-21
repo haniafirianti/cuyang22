@@ -14,6 +14,7 @@
     <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
     <link rel="stylesheet" href="{{ asset('style.css')}}">
 
+    
     <link rel="stylesheet" href="{{ asset('css/default-assets/datatables.bootstrap4.css') }}">
     <link rel="stylesheet" href="{{ asset('css/default-assets/responsive.bootstrap4.css') }}">
     <link rel="stylesheet" href="{{ asset('css/default-assets/buttons.bootstrap4.css') }}">
@@ -21,6 +22,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/default-assets/new/sweetalert-2.min.css')}}">
 
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
         
         <style type="text/css">
         .preloader {
