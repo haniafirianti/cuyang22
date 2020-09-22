@@ -11,7 +11,7 @@
 <div class="preloader">
       <div class="loading">
         <img src="{{ asset('image/love.gif')}}" width="200">
-        <p>Harap Tunggu</p>
+        <center><p>Harap Tunggu</p></center>
       </div>
     </div>
 

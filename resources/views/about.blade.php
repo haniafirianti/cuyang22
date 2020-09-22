@@ -8,13 +8,9 @@
               <div class="card">
                   <div class="card-body">
                       <center><h2><b>About Team Cuyang</b></h2></center>
-                        <p></p>
 
                         <img src="{{url('img/cuyang.jpeg')}}" class="rounded" alt="Cinque Terre" height="10%" width="49%">
                         <img src="{{url('img/cuyang.jpeg')}}" class="rounded" alt="Cinque Terre" height="10%" width="49%">
-
-                        <p></p>
-
 
                         <center><h2><b>Our Bio</b></h2></center>
                         <table id="dataTables" class="table table-striped table-bordered" style="width:100%">
@@ -76,8 +72,8 @@
                               <td>Islam</td>
                               <td>ig: santisintia01</td>
                             </tr>
-                            </tbody>
-                            </table>
+                          </tbody>
+                        </table>
 
                             <center><h2><b>Contact Us</b></h2></center>
                                <h6><b>Whatsapp No : </b>089876543210</h6>
@@ -87,9 +83,6 @@
 
                             <center><h2><b>Purpose This Project</b></h2></center>
                                 <h6>Project ini dibuat untuk kami belajar dan menjadi history kami</h6>
-                          </tbody>
-                        </table>
-
                   </div>
               </div>
           </div>

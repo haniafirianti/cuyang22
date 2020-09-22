@@ -15,7 +15,26 @@
                   </div>
               </div>
           </div>
+
+
+        <div class="container-fluid">
+          <div class="mb-30">
+            <center>
+              <button class="btn btn-facebook waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-facebook"></i> </button>
+              <button class="btn btn-twitter waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-twitter"></i> </button>
+              <button class="btn btn-googleplus waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-google-plus"></i> </button>
+              <button class="btn btn-linkedin waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-linkedin"></i> </button>
+              <button class="btn btn-instagram waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-instagram"></i> </button>
+              <button class="btn btn-pinterest waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-pinterest"></i> </button>
+              <button class="btn btn-dribbble waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-dribbble"></i> </button>
+              <button class="btn btn-youtube waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-youtube"></i> </button>
+            </center>
+          </div>
+        </div>
+
       </div>
 </div>
+
+                                      
     
 @endsection

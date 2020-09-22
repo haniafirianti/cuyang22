@@ -25,7 +25,7 @@
                                 <input id="new-password" type="password" class="form-control" name="new-password">
                                  @error('new-password')
                                     <label class="error mt-2 text-danger">
-                                        Password Min 8 Karakter
+                                        {{ $message }}
                                     </label>
                                 @enderror
                             </div>
@@ -64,9 +64,14 @@
 
                                     <center>
                                         
-                                    <img src="{{ url('asset_user/'.$user->avatar)}}" class="img-thumbnail" id="profile_pic" style="object-fit: cover; height: 205px; width: 205px">
+                                    <img src="{{ url('asset_user/'.$user->avatar)}}" class="img-thumbnail" id="profile_pic" style="object-fit: cover; height: 205px; width: 205px" title="Profile {{ \Auth::user()->name }}">
 
                                     <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+                                    @error('avatar')
+                                    <small class="error mt-2 text-danger">
+                                        Ukuran Foto Terlalu Besar
+                                    </small>
+                                    @enderror
                                   <small id="fileHelp" class="form-text text-muted">MAX 2MB.</small>
                                     </center>
                                 </div>

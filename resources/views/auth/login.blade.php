@@ -40,7 +40,7 @@
     <div class="preloader">
       <div class="loading">
         <img src="{{ asset('image/love.gif')}}" width="200">
-        <p>Harap Tunggu</p>
+        <center><p>Harap Tunggu</p></center>
       </div>
     </div>
 
@@ -74,7 +74,7 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label class="float-left" for="emailaddress">Email</label>
-                                                <input class="form-control" name="email" type="email" id="emailaddress"  placeholder="Masukan Email Anda">
+                                                <input class="form-control" name="email" type="email" id="emailaddress" autofocus>
                                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                                  @error('email')
                                                     <p>
@@ -86,7 +86,7 @@
                                             <div class="form-group">
                                                 
                                                 <label class="float-left" for="password">Password</label>
-                                                <input class="form-control" name="password" type="password" id="password" placeholder="Masukan Password Anda">
+                                                <input class="form-control" name="password" type="password" id="password">
                                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                               
 

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
+
 class UserController extends Controller
 {
     /**
@@ -17,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.kelola-user',compact('users'));
     }
 
     /**
@@ -38,7 +40,29 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $file = $request->file('avatar');
+        $users = new User;
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = Hash::make($request->get('password'));
+
+        $users->avatar  = $file->getClientOriginalName();
+        $tujuan_upload = 'asset_user';
+        $file->move($tujuan_upload, $file->getClientOriginalName());
+        
+        $users->assignRole('user');
+        $users->save();
+
+
+        Alert::success('User', 'Berhasil Di Tambahkan');
+        return redirect('/kelola-users');      
     }
 
     /**
@@ -72,7 +96,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+
+        $users = User::whereId($id)->first();
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->update();
+        Alert::success('User','Berhasil di Updated');
+        return redirect('/kelola-users');
+        
     }
 
     public function createChangePassword()
@@ -143,6 +178,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+        if ($users->hasRole('admin')) {
+            Alert::error('Gagal', 'Sesama Admin Tidak bisa Menghapus');
+            return redirect()->back();
+        } else {
+           $users->delete();
+            Alert::success('User', 'Berhasil Di Hapus');
+            return redirect()->back();
+        }
     }
 }

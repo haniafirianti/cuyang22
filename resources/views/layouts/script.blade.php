@@ -19,7 +19,6 @@
 <script src="{{ asset('js/default-assets/datatable-button.min.js') }}"></script>
 
 
-
 <script>
     $(document).ready(function(){
       $(".preloader").fadeOut();

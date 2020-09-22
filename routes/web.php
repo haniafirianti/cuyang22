@@ -48,12 +48,17 @@ Route::group(['middleware' => ['role:admin', 'DisablePreventBack']], function ()
 	Route::get('transaksi/showBuku/{id}', 'TransaksiController@showBuku');
 	Route::get('transaksi/getAnggota/{id}', 'TransaksiController@getAnggota');
 	Route::post('/transaksi/update/{id}', 'TransaksiController@update');
+	Route::get('/change-password', 'UserController@createChangePassword');
+	Route::post('/change-password', 'UserController@StoreChangePassword');
+	Route::post('/profile', 'UserController@update_avatar');
+
+	Route::get('/kelola-users', 'UserController@index');
+	Route::post('/users', 'UserController@store');
+	Route::put('/users/update/{id}', 'UserController@update');
+	Route::delete('/users/{id}', 'UserController@destroy');
+
 });
 
-// Route::get('users', 'UserController@create');
 
 
-Route::get('/change-password', 'UserController@createChangePassword');
-Route::post('/change-password', 'UserController@StoreChangePassword');
 
-Route::post('/profile', 'UserController@update_avatar');

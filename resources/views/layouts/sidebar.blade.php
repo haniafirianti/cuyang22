@@ -37,7 +37,7 @@ $users = \App\User::where('id', \Auth::user()->id)->first();
     <div class="ecaps-sidemenu-area">
         <!-- Desktop Logo -->
         <div class="ecaps-logo">
-            <a href="index.html"><img class="desktop-logo" src="{{ url('img/core-img/logo.png')}}" alt="Desktop Logo"> <img class="small-logo" src="{{ url('img/core-img/small-logo.png')}}" alt="Mobile Logo"></a>
+            <a href="{{ url('home') }}"><img class="desktop-logo" src="{{ url('img/core-img/logo.png')}}" alt="Desktop Logo"> <img class="small-logo" src="{{ url('img/core-img/small-logo.png')}}" alt="Mobile Logo"></a>
         </div>
 
         <!-- Side Nav -->
@@ -50,7 +50,7 @@ $users = \App\User::where('id', \Auth::user()->id)->first();
                         <ul class="sidebar-menu tree" data-widget="tree">
                             <li class="sidemenu-user-profile d-flex align-items-center">
                                 <div class="user-thumbnail">
-                                    <img src="{{ asset('asset_user/' . Auth::user()->avatar) }}" alt="eRROR">
+                                    <img src="{{ asset('asset_user/' . Auth::user()->avatar) }}" alt="eRROR" title="Profile {{ \Auth::user()->name }}">
                                 </div>
                                 <div class="user-content">
                                     <h6>{{ \Auth::user()->name }}</h6>
@@ -74,9 +74,11 @@ $users = \App\User::where('id', \Auth::user()->id)->first();
                                 <a href="javascript:void(0)"><i class="icon_cog"></i> </i> <span>Setting</span></i></a>
                                 <ul class="treeview-menu">
                                     <li><a href="{{ url('change-password') }}">Profile</a></li>
-
                                 </ul>
                             </li>
+
+                            <li><a href="{{ url('kelola-users')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+
                             <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
                         </ul>
                     </nav>
