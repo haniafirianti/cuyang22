@@ -68,7 +68,14 @@ $users = \App\User::where('id', \Auth::user()->id)->first();
                                     <li><a href="">- Project Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href=""><i class="fa fa-phone"></i> <span>Contact</span></a></li>
+
+                            <li class="treeview">
+                                <a href="javascript:void(0)"><i class="fa fa-phone"></i> <span>Contact Us</span> <i class="fa fa-angle-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a href="{{ url('contact/'.Auth()->user()->id) }}">- Contact</a></li>
+                                    <li><a href="{{ url('show-contacts') }}">- Show Report</a></li>
+                                </ul>
+                            </li>
 
                             <li class="treeview">
                                 <a href="javascript:void(0)"><i class="icon_cog"></i> </i> <span>Setting</span></i></a>

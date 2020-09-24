@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Contact;
+
+use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
+
 class HomeController extends Controller
 {
     /**
@@ -14,7 +19,6 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        
     }
 
     /**
@@ -25,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('home',compact('users'));
+        return view('home', compact('users'));
     }
     public function about()
     {
