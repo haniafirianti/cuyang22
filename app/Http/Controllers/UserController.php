@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Contact;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -65,35 +66,17 @@ class UserController extends Controller
         return redirect('/kelola-users');      
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
          $request->validate([
@@ -108,6 +91,79 @@ class UserController extends Controller
         Alert::success('User','Berhasil di Updated');
         return redirect('/kelola-users');
         
+    }
+
+    public function createChangePasswordUsers()
+    {
+        $user = Auth::user();
+        return view('users.setting-users', compact('user'));
+    }
+
+    public function storeChangePasswordUsers(Request $request)
+    {
+        $request->validate([
+            'new-password' => 'required|min:8',
+        ]);
+
+        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+            Alert::error('Gagal', 'Password lama anda Salah');
+            return redirect()->back();
+        }
+
+        if (strcmp($request->get('current-password'), $request->get('new-password')) == 0) {
+            //Current password and new password are same
+            Alert::error('Gagal', 'Gunakan Password Baru !');
+            return redirect()->back();
+        }
+        if (!(strcmp($request->get('new-password'), $request->get('new-password_confirmation'))) == 0) {
+            //New password and confirm password are not same
+            Alert::error('Gagal', 'Ulangi Password Tidak sesuai');
+            return redirect()->back();
+        }
+        //Change Password
+        $user = Auth::user();
+        $user->password = Hash::make($request->get('new-password'));
+        $user->save();
+        Alert::success('Berhasil', 'Password berhasil di Ubah');
+        return redirect()->back();
+    }
+
+    public function update_avatarUsers(Request $request)
+    {
+
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $user = Auth::user();
+
+        $file = $request->file('avatar');
+        $user->avatar  = $file->getClientOriginalName();
+        $tujuan_upload = 'asset_user';
+        $file->move($tujuan_upload, $file->getClientOriginalName());
+        $user->save();
+
+        Alert::success('Profile', 'Berhasil Di Update');
+        return redirect()->back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $users = User::find($id);
+        if ($users->hasRole('admin')) {
+            Alert::error('Gagal', 'Sesama Admin Tidak bisa Menghapus');
+            return redirect()->back();
+        } else {
+           $users->delete();
+            Alert::success('User', 'Berhasil Di Hapus');
+            return redirect()->back();
+        }
     }
 
     public function createChangePassword()
@@ -160,32 +216,34 @@ class UserController extends Controller
         $file->move($tujuan_upload, $file->getClientOriginalName());
         $user->save();
 
-        // $avatarName = $user->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
-
-        // $request->avatar->storeAs('avatars', $avatarName);
-
-        // $user->avatar = $avatarName;
-        // $user->save();
         Alert::success('Profile', 'Berhasil Di Update');
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function createReport($id)
     {
-        $users = User::find($id);
-        if ($users->hasRole('admin')) {
-            Alert::error('Gagal', 'Sesama Admin Tidak bisa Menghapus');
-            return redirect()->back();
-        } else {
-           $users->delete();
-            Alert::success('User', 'Berhasil Di Hapus');
-            return redirect()->back();
-        }
+        $users = User::get();
+        return view('users.contact', compact('users'));
+    }
+
+    public function storeReport(Request $request, $id)
+    {
+        $request->validate([
+            'title'         => 'required|min:4',
+            'description'   => 'required|min:10'
+        ]);
+        $users = User::whereId($id)->first();
+
+        $contact = new Contact;
+        $contact->user_id   = $users->id;
+        $contact->title = $request->title;
+        $contact->description = $request->description;
+        $contact->save();
+        Alert::success('Report', 'Berhasil di Simpan');
+        return redirect()->back();
+    }
+    public function profile()
+    {
+        return view('users.profile');
     }
 }

@@ -63,7 +63,13 @@ $users = \App\User::where('id', \Auth::user()->id)->first();
                                 <a href="javascript:void(0)"><i class="icon_laptop"></i> <span>Progress</span> <i class="fa fa-angle-right"></i></a>
                                 <ul class="treeview-menu">
                                     <li><a href="{{ url('perpustakaan')}}">- Progress 1</a></li>
-                                    <li><a href="">- Progress 2</a></li>
+                                    <li class="treeview">
+                                        <a href="#">- Progres 2<i class="fa fa-angle-right"></i></a>
+                                        <ul class="treeview-menu" style="display: none;">
+                                            <li><a href="#">Product</a></li>
+                                            <li><a href="#">List Orders</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="">- Progress 3</a></li>
                                     <li><a href="">- Project Details</a></li>
                                 </ul>

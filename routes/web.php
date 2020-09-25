@@ -56,11 +56,20 @@ Route::group(['middleware' => ['role:admin', 'DisablePreventBack']], function ()
 	Route::post('/users', 'UserController@store');
 	Route::put('/users/update/{id}', 'UserController@update');
 	Route::delete('/users/{id}', 'UserController@destroy');
+
+	Route::get('contact/{id}', 'ContactController@create');
+	Route::post('contact/{id}', 'ContactController@store');
+
+	Route::get('show-contacts', 'ContactController@index');
+	Route::put('/contacts/update/{id}', 'ContactController@update');
+	Route::delete('/contacts/{id}', 'ContactController@destroy');
 });
 
-Route::get('contact/{id}', 'ContactController@create');
-Route::post('contact/{id}', 'ContactController@store');
+	Route::get('/setting-users', 'UserController@createChangePasswordUsers');
+	Route::post('/change-password', 'UserController@StoreChangePasswordUsers');
+	Route::post('/setting-users', 'UserController@update_avatarUsers');
 
-Route::get('show-contacts', 'ContactController@index');
-Route::put('/contacts/update/{id}', 'ContactController@update');
-Route::delete('/contacts/{id}', 'ContactController@destroy');
+	Route::get('report/{id}', 'UserController@createReport');
+	Route::post('report/{id}', 'UserController@storeReport');
+
+	Route::get('profile', 'UserController@profile');

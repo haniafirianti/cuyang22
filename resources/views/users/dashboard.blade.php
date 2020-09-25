@@ -1,92 +1,126 @@
-<html lang="en"><!-- Mirrored from demo.riktheme.com/undex-1/side-menu-dark/coming-soon.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Oct 2019 08:41:50 GMT --><head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+@extends('layouts.users.master')
 
-    <!-- Title -->
-    <title>Undex - Modern Admin Template</title>
+@section('content')
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/core-img/favicon.png')}}">
-
-    <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
-    <link rel="stylesheet" href="{{ asset('style.css')}}">
-
-    <style type="text/css">
-        .preloader {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 9999;
-          background-color: #fff;
-        }
-        .preloader .loading {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%,-50%);
-          font: 14px arial;
-        }
-        </style>
-</head>
-
-<body>
-    <!-- Preloader -->
-    
-    <div class="preloader">
-      <div class="loading">
-        <img src="{{ asset('image/love.gif')}}" width="200">
-        <p>Harap Tunggu</p>
-      </div>
-    </div>
-
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-12">
-                <!-- Coming Soon Area Start -->
-                <div class="coming-soon-area d-flex align-items-center">
-                    <!-- Coming Soon Content  -->
-                    <div class="coming-soon-content">
-                        <!-- Text And Form area -->
-                        <div class="text-form-area">
-                            <h2>Coming <span>Soon</span></h2>
-                            <p>Kami akan segera hadir ! Untuk saat ini <br> Web Belum bisa disajikan Karena dalam Tahap Pembuatan.</p>
-
-                            <a href="{{ url('logout') }}" class="btn btn-danger">Logout</a>
-
-                            <div class="countdown-timer  wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                                <div id="clock"><div>461 <span>Days</span></div> <div>14 <span>Hours</span></div> <div>38 <span>Minutes</span></div> <div>47 <span>Seconds</span></div></div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
+   <div class="main-content">
+    <!-- Product Edit area Start -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Awsome Solder Bag</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/8.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
             </div>
+          </div>
         </div>
 
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Sound Box</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/6.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Head Phone</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/7.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Awsome Solder Bag</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/8.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Awsome Chair</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/9.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Hand Watch</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/10.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Sun Glass</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/11.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="single-product-item mb-30">
+            <div class="product-card">
+              <h3 class="product font-18 mb-0">Solder Bag</h3>
+              <a class="product-thumb" href="product-details.html"><img src="img/shop-img/8.jpg" alt="Product"></a>
+              <h3 class="product-title"><a href="#">Price</a></h3>
+              <h4 class="product-price">$90.00</h4>
+              <div class="product-buttons">
+                <a class="btn btn-primary mt-20" href="cart.html">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end row -->
+
     </div>
+</div>
 
-
-
-    <!-- Must needed plugins to the run this template -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/bundle.js') }}"></script>
-
-    <!-- Active JS -->
-    <script src="{{ asset('js/default-assets/active.js') }}"></script>
-
-    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-          $(".preloader").fadeOut();
-        })
-    </script>
-
-
-</body></html>
+@endsection
