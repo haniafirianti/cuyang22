@@ -44,7 +44,9 @@
     </div>
 </div>
 
+@endsection
 
+@section('modal')
 <div class="modal inmodal fade" id="myModal-edit" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

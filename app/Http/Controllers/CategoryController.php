@@ -2,25 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use App\Anggota;
-use App\Buku;
+use App\CategoryProduct;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-
-class AnggotaController extends Controller
+use Auth;
+use Alert;
+class CategoryController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $anggota = Anggota::all();
-        return view('anggota.index', compact('anggota'));
+      public function index(){
+        $categories = CategoryProduct::all();
+        return view('Category-products.index',compact('categories'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,7 +26,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view('anggota.create');
+        //
     }
 
     /**
@@ -40,26 +37,27 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nama_anggota' => 'required',
-            'jenis_kelamin'  => 'required',
-            'alamat'  => 'required',
-            'email'  => 'required|unique:table_anggota',
-            'no_telp' => 'required'
+        $request->validate([
+            'category_name' => 'required'
         ]);
 
-        Anggota::create($request->all());
-        Alert::success('Anggota', 'Berhasil Di Tambahkan');
-        return redirect('anggota');
+        $users = Auth::user();
+
+        $categories = new CategoryProduct;
+        $categories->category_name = $request->category_name;
+        $categories->created_by = $users->id;
+        $categories->save();
+        Alert::success('Kategori', 'Berhasil di Tambahkan');
+        return redirect('category-products');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
         //
     }
@@ -67,7 +65,7 @@ class AnggotaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,10 +77,10 @@ class AnggotaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -90,11 +88,18 @@ class AnggotaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $users = Auth::user();
+
+        $categories = CategoryProduct::find($id);
+        $categories->deleted_by = $users->id;
+        $categories->save();
+        $categories->delete();
+        Alert::success('Kategori', 'Berhasil Di Hapus');
+        return redirect()->back();
     }
 }

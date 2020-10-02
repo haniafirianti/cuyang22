@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return view('auth.login');
+	return view('Auth.login');
 });
 
 
@@ -23,31 +23,11 @@ Route::get('/logout', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'DisablePreventBack'], function () {
-
-	Route::get('/dashboard', function () {
-		return view('users.dashboard');
-	})->name('dashboard');
-});
-
-
 Route::group(['middleware' => ['role:admin', 'DisablePreventBack']], function () {
 
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/home/about', 'HomeController@about');
 
-	Route::get('/perpustakaan', function () {
-		return view('perpustakaan');
-	});
-
-	Route::resource('anggota', 'AnggotaController');
-	Route::resource('kategori', 'KategoriController');
-	Route::resource('buku', 'BukuController');
-	Route::resource('transaksi', 'TransaksiController');
-	Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
-	Route::get('transaksi/showBuku/{id}', 'TransaksiController@showBuku');
-	Route::get('transaksi/getAnggota/{id}', 'TransaksiController@getAnggota');
-	Route::post('/transaksi/update/{id}', 'TransaksiController@update');
 	Route::get('/change-password', 'UserController@createChangePassword');
 	Route::post('/change-password', 'UserController@StoreChangePassword');
 	Route::post('/profile', 'UserController@update_avatar');
@@ -65,11 +45,31 @@ Route::group(['middleware' => ['role:admin', 'DisablePreventBack']], function ()
 	Route::delete('/contacts/{id}', 'ContactController@destroy');
 });
 
+
+
+Route::group(['middleware' => 'DisablePreventBack'], function () {
+
+	Route::get('/dashboard', function () {
+		return view('users.dashboard');
+	})->name('dashboard');
+
 	Route::get('/setting-users', 'UserController@createChangePasswordUsers');
 	Route::post('/change-password', 'UserController@StoreChangePasswordUsers');
 	Route::post('/setting-users', 'UserController@update_avatarUsers');
 
-	Route::get('report/{id}', 'UserController@createReport');
-	Route::post('report/{id}', 'UserController@storeReport');
+	Route::get('/report/{id}', 'UserController@createReport');
+	Route::post('/report/{id}', 'UserController@storeReport');
 
-	Route::get('profile', 'UserController@profile');
+	Route::get('/profile', 'UserController@profile');
+});
+
+
+Route::get('/products', 'ProductController@index');
+Route::get('/products/create', 'ProductController@create');
+Route::post('/products', 'ProductController@store');
+Route::get('/products/show/{id}', 'ProductController@show');
+Route::delete('/products/{id}', 'ProductController@destroy');
+
+Route::get('/category-products', 'CategoryController@index');
+Route::post('/category-products', 'CategoryController@store');
+Route::delete('/category-products/{id}', 'CategoryController@destroy');

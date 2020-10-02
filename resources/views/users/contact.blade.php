@@ -230,11 +230,6 @@
                             <div class="form-group">
                                 <label for="exampleTextarea1">Pesan</label>
                                 <textarea class="form-control" name="description" id="exampleTextarea1" rows="10"></textarea>
-                                @error('description')
-                                <label class="error mt-2 text-danger">
-                                    {{ $message }}
-                                </label>
-                                @enderror
                             </div>
 
                             <center>

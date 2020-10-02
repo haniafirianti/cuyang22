@@ -18,17 +18,14 @@
 <script src="{{ asset('js/default-assets/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('js/default-assets/datatable-button.min.js') }}"></script>
 
-
 <script>
-    $(document).ready(function(){
-      $(".preloader").fadeOut();
-    })
+  $(document).ready(function() {
+    $(".preloader").fadeOut();
+  })
 </script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-      $('#dataTables').DataTable();
-  } );
-
+  $(document).ready(function() {
+    $('#dataTables').DataTable();
+  });
 </script>
-

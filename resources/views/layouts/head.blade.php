@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('css/default-assets/new/sweetalert-2.min.css')}}">
 
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+   
         
         <style type="text/css">
         .preloader {
@@ -43,5 +45,6 @@
         }
         </style>
 
-
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 </head>
