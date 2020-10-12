@@ -49,8 +49,8 @@
                               <td>3</td>
                               <td>Dede Suminar</td>
                               <td>Perempuan</td>
-                              <td>Bandung, 22 Maret 2003</td>
-                              <td>Bojong Kunci</td>
+                              <td>Bandung, 20 Maret 2003</td>
+                              <td>Bojongkunci</td>
                               <td>Islam</td>
                               <td>ig: dedesuminar03</td>
                             </tr>

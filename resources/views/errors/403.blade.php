@@ -52,7 +52,7 @@
             	<h1>403 - ERROR YOU DON'T HAVE ACCESS </h1>
                <!--  <img src="{{ asset('img/403.jpg')}}" alt=""> -->
             </div>
-            <h2>Opps! Anda Tidak Memuliki Akses Bambank !!!</h2>
+            <h2>Opps! Anda Tidak Memiliki Akses Bambank !!!</h2>
             <p>Silahkan Kembali Ke halaman Dashboar ! atau baku Hamtam bareng Gue !</p>
             <a class="btn btn-rounded btn-primary mt-30" href="{{ url('dashboard') }}">Back To Dashboard</a>
         </div>
