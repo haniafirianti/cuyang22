@@ -7,6 +7,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
+
           <center>
             <h4 class="card-title">We Are RPL 1</h4>
           </center>
@@ -31,7 +32,14 @@
           <button class="btn btn-dribbble waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-dribbble"></i> </button>
           <button class="btn btn-youtube waves-effect btn-circle waves-light mb-2" type="button"> <i class="fa fa-youtube"></i> </button>
         </center>
+        <div class="card-body">
+          <div class="py-4">
+            <h6 class="mb-15">Cari Profil Github Anda Disisni !</h6>
+            <button type="button" class="btn btn-info btn-xs" id="ajax-alert"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
       </div>
+
     </div>
 
   </div>

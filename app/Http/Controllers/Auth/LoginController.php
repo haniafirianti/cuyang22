@@ -21,6 +21,8 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    
+    
 
     /**
      * Where to redirect users after login.
@@ -34,11 +36,7 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('DisablePreventBack');
-        $this->middleware('guest')->except('logout');
-    }
+   
 
     protected function authenticated(Request $request, $user)
     {

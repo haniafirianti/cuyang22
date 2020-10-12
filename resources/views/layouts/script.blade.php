@@ -18,6 +18,9 @@
 <script src="{{ asset('js/default-assets/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('js/default-assets/datatable-button.min.js') }}"></script>
 
+<script src="js/default-assets/sweetalert2.min.js" aria-hidden="true"></script>
+<script src="js/default-assets/sweetalert-init.js" aria-hidden="true"></script>
+
 <script>
   $(document).ready(function() {
     $(".preloader").fadeOut();

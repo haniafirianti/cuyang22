@@ -31,7 +31,7 @@
                             <form class="pl-lg-4">
                                 <!-- Product title -->
                                 <h3 class="mt-0 font-24">{{ $products->product_name }}</h3>
-                                <p class="mb-1 font-15">Added Date: 09/05/2019</p>
+                                <p class="mb-1 font-15">Added Date: {{ $products->created_at }} </p>
                                 <p></p>
                                 <p class="font-15">
                                     <span class="text-warning zmdi zmdi-star-outline"></span>

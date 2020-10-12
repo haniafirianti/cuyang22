@@ -6,7 +6,7 @@ use App\CategoryProduct;
 use App\Product;
 use App\User;
 use App\DetailProduct;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -19,11 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::join('category_products', 'products.product_category_id', '=', 'category_products.id')
-        ->select(
-            'products.id as product_id',
-            'products.*',
-            'category_products.*')->get();
+        $products = Product::all();
 
         return view('products.index', compact('products'));
     }
@@ -37,8 +33,8 @@ class ProductController extends Controller
     {
         $users = User::get();
         $code = rand();
-        $categories = CategoryProduct::orderBy('category_name','asc')->get();
-        return view('products.create', compact('users','code','categories'));
+        $categories = CategoryProduct::orderBy('category_name', 'asc')->get();
+        return view('products.create', compact('users', 'code', 'categories'));
     }
 
     /**
@@ -54,11 +50,11 @@ class ProductController extends Controller
             'product_category_id' => 'required',
         ]);
         $users = Auth::user();
-        
+
         $products = new Product;
         $products->product_name =  $request->product_name;
         $products->product_category_id =  $request->product_category_id;
-        
+
         $products->product_status = "1";
         $products->created_by = $users->id;
         $products_save = $products->save();
@@ -66,7 +62,7 @@ class ProductController extends Controller
         $request = $request->input();
         if ($products_save) {
             foreach ($request as $key => $requestType) {
-            
+
                 if (is_array($requestType)) {
 
                     foreach ($requestType as $requestKey => $requestValue) {
@@ -86,7 +82,7 @@ class ProductController extends Controller
         } else {
             # code...
         }
-        
+
 
         Alert::success('Barang', 'Berhasil di tambahkan');
         return redirect('/products');
@@ -106,8 +102,14 @@ class ProductController extends Controller
     public function show($id)
     {
 
-        $products = DetailProduct::findOrFail($id);
-
+        $products = Product::findOrFail($id);
+        $details_products = DetailProduct::join('products', 'details_products.product_id', '=', 'products.id')
+            ->join('category_products', 'products.product_category_id', '=', 'category_products.id')
+            ->select(
+                'category_products.*',
+                'products.*',
+                'details_products.*'
+            )->get();
         return view('products.show', compact('products'));
     }
 
@@ -144,12 +146,11 @@ class ProductController extends Controller
     {
         $users = Auth()->user();
         $products = Product::whereId($id)->first();
-        dd($products);
         $products->deleted_by = $users->id;
         $products->save();
         $products->delete();
 
-        Alert::success('Barang', 'Berhasil Di Hapus');
+        Alert::warning('Barang', 'Berhasil Di Hapus');
         return redirect()->back();
     }
 }

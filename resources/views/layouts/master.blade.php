@@ -44,8 +44,6 @@
     @include('layouts.script')
     @include('sweetalert::alert')
 
-
-    @yield('modal')
 </body>
 
 </html>

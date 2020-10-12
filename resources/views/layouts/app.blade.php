@@ -35,9 +35,7 @@ Logout
 </form>
 </li>
 <li>
-<a href="{{route('changePassword')}}">
-Change Password
-</a>
+
 </li>
 </ul>
     <div id="app">
