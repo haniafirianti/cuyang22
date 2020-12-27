@@ -1,1 +1,0 @@
-!function(l){"use strict";l(".lightgallery").length&&l(".lightgallery").lightGallery()}(jQuery);
