@@ -14,10 +14,10 @@
     <table class="table table-bordered mt-5">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Title</th>
-                <th>Body</th>
-                <th width="150px">Action</th>
+                <th>No</th>
+                <th>Judul</th>
+                <th>Pesan</th>
+                <th width="150px">Option</th>
             </tr>
         </thead>
         <tbody>
