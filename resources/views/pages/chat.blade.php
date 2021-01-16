@@ -54,7 +54,7 @@
                                                     <div class="alert alert-primary mb-0">
                                                         @{{ message.content }}
                                                     </div>
-                                                    <small><i>@{{ new Date(message.created_at).toLocaleDateString()}}</i></small>
+                                                    <small><i>{{ Auth()->user()->created_at->format('l, d F Y H:i') }} </i></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -64,7 +64,7 @@
                                             <div class="alert alert-secondary mb-0">
                                                 @{{ message.content }}
                                             </div>
-                                            <small class="float-right"><i>@{{ new Date(message.created_at).toLocaleDateString()}}</i></small>
+                                            <small class="float-right"><i>{{ Auth()->user()->created_at->format('l, d F Y H:i') }}</i></small>
                                         </div>
                                     </li>
                                 </div>
