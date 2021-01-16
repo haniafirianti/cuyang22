@@ -38,23 +38,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-        'avatar'
-    ];
-
-    /**
      * Get the profile photo URL attribute.
      *
      * @return string
      */
-    public function getAvatarAttribute()
-    {
-        return 'https://www.gravatar.com/avatar/' . md5(strtolower($this->email));
-    }
 
     public function messagesTo()
     {

@@ -55744,7 +55744,6 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
         if (this.form.to_id == user_id) {
           this.messages.push({
-            avatar: data.avatar,
             content: data.content,
             created_at: data.created_at,
             from_id: data.from_id

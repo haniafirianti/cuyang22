@@ -16,7 +16,11 @@
                                 'active': isActive === index && search == '' ? true : false
                             }]" v-on:click="fetchMessages(user.id)">
                             <div class="media">
-                               <!--  <img class="mr-3 rounded-sm rounded-circle" :src="user.avatar" alt="profile"> -->
+                                @if(!Auth()->user()->profile_picture == NULL)
+                                <img class="mr-3 rounded-sm rounded-circle" src="user.avatar" alt="profile">
+                                @else
+                                <img class="mr-3 rounded-sm rounded-circle" src="{{ url('users/default_profile_picture.png') }}" alt="profile">
+                                @endif
                                 <div class="media-body">
                                     <strong>@{{ user.name }}</strong>
                                     <p v-if="user.content">
@@ -41,7 +45,11 @@
                                     <li v-if="message.from_id != {{ auth()->user()->id }}" class="list-group-item">
                                         <div class="list-message-item">
                                             <div class="media">
-                                                <!-- <img class="mr-3 rounded-sm rounded-circle" :src="message.avatar" alt="profile"> -->
+                                                @if(!Auth()->user()->profile_picture == NULL)
+                                                <img class="mr-3 rounded-sm rounded-circle" src="user.avatar" alt="profile">
+                                                @else
+                                                <img class="mr-3 rounded-sm rounded-circle" src="{{ url('users/default_profile_picture.png') }}" alt="profile">
+                                                @endif
                                                 <div class="media-body">
                                                     <div class="alert alert-primary mb-0">
                                                         @{{ message.content }}
