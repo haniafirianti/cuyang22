@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', function () {
-    return view('post');
+Auth::routes();
+
+Route::get('/chat', 'HomeController@index')->name('chat');
+
+Route::group(['prefix' => 'message'], function () {
+    Route::get('user/{query}', 'MessageController@user');
+    Route::get('user-message/{id}', 'MessageController@message');
+    Route::get('user-message/{id}/read', 'MessageController@read');
+    Route::post('user-message', 'MessageController@send');
 });
-
-
