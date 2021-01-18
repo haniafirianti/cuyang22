@@ -12,6 +12,6 @@ return [
     |
     */
 
-    'failed'   => 'Identitas tersebut tidak cocok dengan data kami.',
+    'failed'   => 'Maaf, email dan password anda tidak sesuai.',
     'throttle' => 'Terlalu banyak usaha masuk. Silahkan coba lagi dalam :seconds detik.',
 ];

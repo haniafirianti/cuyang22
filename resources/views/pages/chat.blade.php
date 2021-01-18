@@ -37,6 +37,7 @@
                         </a>
                     </ul>
                 </div>
+                
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-body card-message" id="card-message-scroll">
@@ -76,7 +77,7 @@
                         <form id="form" @submit.prevent="sendMessage">
                             <div class="form-row">
                                 <div class="form-group col-md-10">
-                                    <input v-model="form.content" type="text" class="form-control" placeholder="Tulis pesan...">
+                                    <input v-model="form.content" type="text" class="form-control" placeholder="Tulis pesan..." required>
                                 </div>
                                 <div class="form-group col-md-2">
                                     <button id="btnSubmit" type="submit" class="btn btn-primary">Kirim</button>
