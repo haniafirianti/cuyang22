@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('pages.chat');
     }
+    public function profile()
+    {
+        return view('pages.profiles');
+    }
 }

@@ -22,8 +22,8 @@
                                 <img class="mr-3 rounded-sm rounded-circle" src="{{ url('users/default_profile_picture.png') }}" alt="profile">
                                 @endif
                                 <div class="media-body">
-                                    <strong>@{{ user.name }}</strong>
-                                    <p v-if="user.content">
+                                    <strong style="cursor: default;">@{{ user.name }}</strong>
+                                    <p v-if="user.content" style="cursor: default;">
                                         @{{
                                             (id != user.to_id ? 'Anda: ' : '')
                                             + (user.content.length > 20 

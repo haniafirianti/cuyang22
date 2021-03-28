@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <style>
+        * {
+            box-sizing: border-box;
+        }
         html,
         body {
             background-color: #fff;
@@ -20,6 +23,10 @@
             font-weight: 200;
             height: 100vh;
             margin: 0;
+              width: 100%;
+        }
+        *{
+            box-sizing: 
         }
 
         .full-height {
@@ -42,6 +49,12 @@
             top: 18px;
         }
 
+        .top-right>a{
+            color: #636b6f;
+            padding: 5px;
+            text-decoration: none;
+        }
+
         .content {
             text-align: center;
         }
@@ -50,7 +63,7 @@
             font-size: 84px;
         }
 
-        .links>a {
+        .group-name>span {
             color: #636b6f;
             padding: 0 25px;
             font-size: 13px;
@@ -69,9 +82,9 @@
 <body>
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
-        <div class="top-right links">
+        <div class="top-right">
             @auth
-            <a href="{{ url('/chat') }}">Home</a>
+            <a href="{{ url('chat') }}">Home</a>
             @else
             <a href="{{ route('login') }}">Login</a>
 
@@ -84,18 +97,11 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Laravel
+                <img src="{{ asset('images/cuyang/dear-cuyang.jpeg') }}" width="400px" height="400px">
             </div>
 
-            <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="group-name">
+                <span>Candra|Ahmad|Dede|Hania|Santi</span>
             </div>
         </div>
     </div>

@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/chat', 'HomeController@index')->name('chat');
+Route::get('/profiles', 'HomeController@profile');
 
 Route::group(['prefix' => 'message'], function () {
     Route::get('user/{query}', 'MessageController@user');
