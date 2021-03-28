@@ -27,13 +27,64 @@
 
         <div class="content">
             <div class="title">
-                <img src="{{ asset('images/cuyang/dear-cuyang.jpeg') }}" width="375px" height="auto">
+                <img src="{{ asset('media/cuyang-images/dear-cuyang.jpeg') }}" width="370px" height="auto">
             </div>
 
             <div class="group-name">
                 <span>Candra|Ahmad|Dede|Hania|Santi</span>
             </div>
         </div>
+    </div>
+
+    <div class="content-videos">
+      <div class="container">
+        <div class="title-vidio">
+          <h2>Cari tau lebih dalam tentang cuyang!</h2>
+        </div>
+        <div class="lessons">
+          <div class="video">
+            <div class="video-box">
+              <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/ciluk-ba.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/ciluk-ba.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video>                
+            </div>
+              <p class="text-videos">Vidio ini menunjukan kegembiraan atau kebahagian bareng</p>
+          </div>
+          <div class="video">
+            <div class="video-box">
+              <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/jedag-jedug.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/jedag-jedug.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video> 
+            </div>
+            <p class="text-videos">Vidio ini menunjukan pusing akibat banyak tugas dan akhirnya dibikin jedag jedug supaya hilang rasa pusingnya</p>
+          </div>
+          <div class="video">
+            <div class="video-box">
+                <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/left-right.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/left-right.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video> 
+            </div>
+            <p class="text-videos">Vidio ini adalah menunjukan tipikal jodoh atau orang yang disukainya</p>
+          </div>
+          <div class="video">
+            <div class="video-box">
+              <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/small-big.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/small-big.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video> 
+            </div>
+            <p class="text-videos">Vidio ini menunjukan pertumbuhan dan perkembangan cuyang waktu dini hingga dewasa</p>
+          </div>
+
+        </div>
+      </div>
     </div>
 </body>
 

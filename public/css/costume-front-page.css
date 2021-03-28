@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 html,
+
 body {
     background-color: #fff;
     color: #636b6f;
@@ -55,3 +56,38 @@ body {
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.title-vidio h2 {
+  font-weight: normal;
+}
+
+.content-videos {
+  padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+}
+
+.video {
+  float: left;
+  width: 25%;
+}
+
+.video-box {
+  position: relative;
+}
+
+.text-videos {
+  width: 80%;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #000000;
+}
+
+/*Smartphone*/
+@media all and (max-width: 670px) {
+  .video {
+    width: 100%;
+  }
+
