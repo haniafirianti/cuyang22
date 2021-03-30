@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\User\Users;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,5 @@ Route::group(['prefix' => 'message'], function () {
     Route::get('user-message/{id}/read', 'MessageController@read');
     Route::post('user-message', 'MessageController@send');
 });
+
+Route::view('/pengguna', 'livewire.user.master');
