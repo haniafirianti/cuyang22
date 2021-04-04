@@ -42,7 +42,7 @@
         <div class="title-vidio">
           <h2>Cari tau lebih dalam tentang cuyang!</h2>
         </div>
-        <div class="lessons">
+
           <div class="video">
             <div class="video-box">
               <video width="320" height="240" controls>
@@ -71,7 +71,7 @@
                     Browser Anda tidak mendukung video ini.
                 </video> 
             </div>
-            <p class="text-videos">Vidio ini adalah menunjukan tipikal jodoh atau orang yang disukainya</p>
+            <p class="text-videos">Vidio ini menunjukan tipikal jodoh atau orang yang disukainya</p>
           </div>
           <div class="video">
             <div class="video-box">
@@ -83,10 +83,21 @@
             </div>
             <p class="text-videos">Vidio ini menunjukan pertumbuhan dan perkembangan cuyang waktu dini hingga dewasa</p>
           </div>
+          <div class="clear"></div>
+          <div class="video">
+            <div class="video-box">
+              <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/try-for-fun.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/try-for-fun.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video> 
+            </div>
+            <p class="text-videos">Vidio ini menunjukan foto foto cuyang dengan berbagai fose. vidio ini terbuat karena terlihat sekilas cuplikan vidio yang ada di youtube</p>
+          </div>
 
-        </div>
       </div>
     </div>
+
 </body>
 
 </html>

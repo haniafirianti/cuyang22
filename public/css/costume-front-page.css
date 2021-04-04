@@ -85,6 +85,12 @@ body {
   color: #000000;
 }
 
+.clear{
+  clear:left;
+}
+
+
+
 /*Smartphone*/
 @media all and (max-width: 670px) {
   .video {
