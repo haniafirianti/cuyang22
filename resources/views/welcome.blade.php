@@ -95,6 +95,17 @@
             <p class="text-videos">Vidio ini menunjukan foto foto cuyang dengan berbagai fose. vidio ini terbuat karena terlihat sekilas cuplikan vidio yang ada di youtube</p>
           </div>
 
+          <div class="video">
+            <div class="video-box">
+              <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/try-for-fun-2.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/try-for-fun-2.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video> 
+            </div>
+            <p class="text-videos">Vidio ini menunjukan foto foto cuyang dengan berbagai fose. Ini adalah versi ke dua nya.</p>
+          </div>
+
       </div>
     </div>
 
