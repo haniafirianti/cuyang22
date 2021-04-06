@@ -18,11 +18,11 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/costume-front-page.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{ asset('media/no-bg.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('media/remove-bg-icon.png') }}" type="image/x-icon">
     <style type="text/css">
     @media all and (max-width: 670px) {
       .dropdown{
@@ -49,7 +49,7 @@
             
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ url('media/no-bg.png') }}" width="35" height="35" alt="">
+                    <img src="{{ url('media/remove-bg-icon.png') }}" width="35" height="35" alt="">
                 </a>
                 <a style="margin-left: 10px;" class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'CUYANGKU') }}
