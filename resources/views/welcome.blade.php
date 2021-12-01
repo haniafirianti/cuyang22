@@ -103,6 +103,17 @@
             </div>
             <p class="text-videos">Vidio ini menunjukan foto foto cuyang dengan berbagai fose. Ini adalah versi ke dua nya.</p>
           </div>
+          
+           <div class="video">
+            <div class="video-box">
+              <video width="320" height="240" controls>
+                    <source src="{{ asset('media/cuyang-videos/try-for-fun-3.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('media/cuyang-videos/try-for-fun-3.ogg') }}" type="video/ogg">
+                    Browser Anda tidak mendukung video ini.
+                </video> 
+            </div>
+            <p class="text-videos">Vidio ini menunjukan video dan foto cuyang random, yang dilakukan saat bermain bersama.</p>
+          </div>
 
       </div>
     </div>
